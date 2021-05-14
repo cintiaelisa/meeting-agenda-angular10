@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>New Meeting</h1>
-<form class="example-form" (formGroup)="meetingForm">
+<form class="example-form" [formGroup]="meetingForm">
     <input type="hidden" formControlName="id" name="id">
     <mat-form-field class="example-full-width">
         <mat-label>Meeting Name</mat-label>
@@ -11,7 +11,7 @@
         <input matInput placeholder="Meeting Subject" formControlName="meetingSubject" name="meetingSubject"/>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-with">
         <mat-label>Meeting Responsible</mat-label>
         <input matInput placeholder="Meeting Responsible" formControlName="meetingResponsible" name="meetingResponsible">
     </mat-form-field>
@@ -35,5 +35,6 @@
         
     <div mat-dialog-actions>
         <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="!meetingForm.valid" (click)="save()">Save</button>
     </div>
 </form>
