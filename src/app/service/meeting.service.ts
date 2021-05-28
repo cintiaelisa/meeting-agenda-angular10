@@ -21,11 +21,11 @@ export class MeetingService {
   ) { }
 
   insert(meeting: any) {
-    return this.http.post(this.MOBILE_BAAS_URL+'?table'+this.tableName,meeting,this.httpOptions);
+    return this.http.post(this.MOBILE_BAAS_URL+'?table='+this.tableName,meeting,this.httpOptions);
   }
 
   update(meeting: any) {
-    return this.http.put(this.MOBILE_BAAS_URL+'?table'+this.tableName,meeting,this.httpOptions);
+    return this.http.put(this.MOBILE_BAAS_URL+'?table='+this.tableName,meeting,this.httpOptions);
   }
 
   delete(id: string) {
