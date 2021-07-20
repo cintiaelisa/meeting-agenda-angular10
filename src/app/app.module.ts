@@ -20,13 +20,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LocalDateTimePipe } from './pipe/local-date-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MeetingListComponent,
-    MeetingFormComponent
+    MeetingFormComponent,
+    LocalDateTimePipe
   ],
   imports: [
     BrowserModule,

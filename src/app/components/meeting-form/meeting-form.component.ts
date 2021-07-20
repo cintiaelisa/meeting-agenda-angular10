@@ -61,7 +61,7 @@ export class MeetingFormComponent implements OnInit {
 
     this.dialogRef.close(true);
     this.meetingForm.reset();
-    //window.location.reload();
+    window.location.reload();
 
   }
 
@@ -76,7 +76,7 @@ export class MeetingFormComponent implements OnInit {
 
     this.dialogRef.close(true);
     this.meetingForm.reset();
-    //window.location.reload();
+    window.location.reload();
   }
 
 }
