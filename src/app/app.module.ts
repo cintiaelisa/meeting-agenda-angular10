@@ -21,6 +21,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocalDateTimePipe } from './pipe/local-date-time.pipe';
+import { DeleteComponent } from './components/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LocalDateTimePipe } from './pipe/local-date-time.pipe';
     HomeComponent,
     MeetingListComponent,
     MeetingFormComponent,
-    LocalDateTimePipe
+    LocalDateTimePipe,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
