@@ -4,6 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { MeetingService } from 'src/app/service/meeting.service';
 import { DeleteComponent } from '../delete/delete.component';
 import { MeetingFormComponent } from '../meeting-form/meeting-form.component';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-meeting-list',
@@ -63,5 +64,23 @@ export class MeetingListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log("The dialog was closed");
     });
+  }
+
+  findByParameter(){
+    let filters = '';
+    
+    if(this.meetingNameFind != null  && this.meetingNameFind != ''){
+      filters+= 'meetingName='+this.meetingNameFind;
+    }
+
+    if(this.meetingDateFind != null) {
+      if(filters != ''){
+        filters+= ';';
+      }
+
+      let newDate: moment.Moment = moment.utc(this.meetingDateFind).local();
+      filters+= 'meetingDate='+newDate.format("YYYY-MM-DDTHH:mm:ss")+'.000Z';
+    }
+    this.findAll(0,'meetingDate',filters);
   }
 }
